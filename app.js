@@ -138,6 +138,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Scroll effect for Starry Night background
+    const starryBg = document.getElementById('starry-bg');
+    if (starryBg) {
+        window.addEventListener('scroll', () => {
+            // Get scroll position and calculate opacity
+            // Fades out completely after 500px of scrolling
+            const scrollY = window.scrollY;
+            const maxScroll = 500;
+            let opacity = 1 - (scrollY / maxScroll);
+            
+            // Limit opacity between 0 and 1
+            if (opacity < 0) opacity = 0;
+            if (opacity > 1) opacity = 1;
+            
+            starryBg.style.opacity = opacity;
+        });
+    }
 });
 
 // Translation toggle function mapping to the global scope
