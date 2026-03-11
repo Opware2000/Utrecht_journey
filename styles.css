@@ -1,13 +1,13 @@
 :root {
-    --bg-primary: #0f111a;
-    --bg-secondary: #1a1d2d;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-primary: #6366f1;
-    --accent-secondary: #a855f7;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --drop-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --bg-primary: #0a1128;
+    --bg-secondary: #1c2b59;
+    --text-primary: #fdf6e3;
+    --text-secondary: #b5c4d6;
+    --accent-primary: #e6b325;
+    --accent-secondary: #517d98;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --drop-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 .shape-3 {
     width: 300px;
     height: 300px;
-    background: #3b82f6;
+    background: #d9652b;
     top: 40%;
     left: 40%;
     animation-delay: -10s;
