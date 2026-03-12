@@ -27,12 +27,45 @@
             <h1 class="title">Discover Utrecht</h1>
             <p class="subtitle">A Journey Through Time, Art, and Culture 🇳🇱</p>
             <div class="hero-actions">
-                <a href="#map-section" class="btn btn-primary">Start Exploring</a>
+                <a href="#safety-section" class="btn btn-primary">Safety Rules ⚠️</a>
+                <a href="#map-section" class="btn btn-secondary">Start Exploring</a>
             </div>
         </div>
     </header>
 
     <main>
+        <section id="safety-section" class="game-container reveal" style="margin-top: 4rem;">
+            <h2 class="section-title">Safety Guidelines ⚠️</h2>
+            <div class="glass-panel card" style="border-left: 4px solid #ef4444;">
+                <div class="game-block" style="border-bottom: none; padding-bottom: 0;">
+                    <div class="original-text">
+                        <ul>
+                            <li><strong>Always stay in groups:</strong> Never be alone during free time, stay in groups of at least 2 people.</li>
+                            <li><strong>Beware of pickpockets:</strong> Keep an eye on your belongings in crowded areas and the train station.</li>
+                            <li><strong>Battery level:</strong> Make sure your phone is sufficiently charged at all times.</li>
+                            <li><strong>Share location:</strong> Share your live location with your friends on WhatsApp or Snapchat.</li>
+                            <li><strong>If you get lost:</strong> Immediately call the teachers to tell them exactly where you are (read the street name) and who you are with.</li>
+                        </ul>
+                    </div>
+                    <button class="translation-toggle" onclick="toggleTranslation('safety-rules')" aria-expanded="false">
+                        <span class="flag">🇫🇷</span> Traduction Française
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="french-text" id="fr-safety-rules">
+                        <ul>
+                            <li><strong>Toujours rester au minimum par 2</strong> pendant les temps libres.</li>
+                            <li><strong>Faire attention aux pickpockets</strong> dans les zones touristiques et la gare.</li>
+                            <li><strong>Avoir toujours un téléphone suffisamment chargé.</strong></li>
+                            <li><strong>Partager votre position</strong> avec vos amis (WhatsApp, Snapchat).</li>
+                            <li><strong>Si vous vous perdez :</strong> appelez tout de suite les enseignants pour dire où vous êtes (nom de la rue sur une plaque) et avec qui.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="game-section" class="game-container reveal">
             <h2 class="section-title">Photo Challenge 📸</h2>
             <div class="glass-panel card game-card">
