@@ -139,21 +139,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Scroll effect for Starry Night background
+    // Scroll effect and Lazy Load for Starry Night background
     const starryBg = document.getElementById('starry-bg');
     if (starryBg) {
+        // Lazy load the local image after the rest of the page loads
+        window.addEventListener('load', () => {
+            const imgUrl = 'starry_night.jpg';
+            const img = new Image();
+            img.src = imgUrl;
+            img.onload = () => {
+                starryBg.style.backgroundImage = `url('${imgUrl}')`;
+                
+                // Use a small timeout to allow the browser to paint the background
+                setTimeout(() => {
+                    starryBg.classList.add('loaded');
+                }, 100);
+            };
+        });
+
         window.addEventListener('scroll', () => {
             // Get scroll position and calculate opacity
             // Fades out completely after 500px of scrolling
             const scrollY = window.scrollY;
             const maxScroll = 500;
-            let opacity = 1 - (scrollY / maxScroll);
             
-            // Limit opacity between 0 and 1
-            if (opacity < 0) opacity = 0;
-            if (opacity > 1) opacity = 1;
-            
-            starryBg.style.opacity = opacity;
+            // Only fade out if it has successfully loaded and faded in
+            if(starryBg.classList.contains('loaded')) {
+                let currentOpacity = 1 - (scrollY / maxScroll);
+                
+                // Limit opacity between 0 and 1
+                if (currentOpacity < 0) currentOpacity = 0;
+                if (currentOpacity > 1) currentOpacity = 1;
+                
+                starryBg.style.opacity = currentOpacity;
+            }
         });
     }
 });

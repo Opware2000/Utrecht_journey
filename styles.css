@@ -99,13 +99,18 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
     background-size: cover;
     background-position: center;
     z-index: -2;
-    opacity: 1; /* Default starting opacity */
+    opacity: 0; /* Starts hidden for lazy load */
     pointer-events: none;
     will-change: opacity; /* Optimize for mobile scroll */
+    transition: opacity 1.5s ease-in; /* Slow fade in on load */
+}
+
+/* Added by JS when the image is fully downloaded */
+.starry-night-bg.loaded {
+    opacity: 1; 
 }
 
 .starry-night-overlay {
